@@ -8,22 +8,20 @@
 import UIKit
 
 class NewsDetailsViewController: UIViewController {
-
+    
+    @IBOutlet weak var newsHeadline: UILabel!
+    @IBOutlet weak var newsImageView: UIImageView!
+    
+    var selectedNews: News?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let url = URL(string: "https://cdn.ttweb.net/News/images/" + selectedNews!.imageId + ".jpg?preset=w220_q40")
+        if let safeUrl = url {
+            newsImageView.load(url: safeUrl)
+        }
+        newsImageView.contentMode = .scaleAspectFill
+        newsHeadline.text = selectedNews?.headline
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

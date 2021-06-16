@@ -22,6 +22,8 @@
 		7FF47123267A2DDB00E88B97 /* SymbolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF47121267A2DDB00E88B97 /* SymbolTableViewCell.swift */; };
 		7FF47124267A2DDB00E88B97 /* SymbolTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF47122267A2DDB00E88B97 /* SymbolTableViewCell.xib */; };
 		7FF47127267A333200E88B97 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF47126267A333200E88B97 /* Extensions.swift */; };
+		7FF4712B267A37E700E88B97 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF47129267A37E700E88B97 /* NewsTableViewCell.swift */; };
+		7FF4712C267A37E700E88B97 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF4712A267A37E700E88B97 /* NewsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		7FF47121267A2DDB00E88B97 /* SymbolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolTableViewCell.swift; sourceTree = "<group>"; };
 		7FF47122267A2DDB00E88B97 /* SymbolTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SymbolTableViewCell.xib; sourceTree = "<group>"; };
 		7FF47126267A333200E88B97 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		7FF47129267A37E700E88B97 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		7FF4712A267A37E700E88B97 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,8 @@
 				7FF470FD267A244300E88B97 /* Assets.xcassets */,
 				7FF47121267A2DDB00E88B97 /* SymbolTableViewCell.swift */,
 				7FF47122267A2DDB00E88B97 /* SymbolTableViewCell.xib */,
+				7FF47129267A37E700E88B97 /* NewsTableViewCell.swift */,
+				7FF4712A267A37E700E88B97 /* NewsTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -187,6 +193,7 @@
 				7FF47124267A2DDB00E88B97 /* SymbolTableViewCell.xib in Resources */,
 				7FF470FE267A244300E88B97 /* Assets.xcassets in Resources */,
 				7FF470FC267A243E00E88B97 /* Main.storyboard in Resources */,
+				7FF4712C267A37E700E88B97 /* NewsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +206,7 @@
 			files = (
 				7FF470F9267A243E00E88B97 /* ViewController.swift in Sources */,
 				7FF47117267A254200E88B97 /* NewsDetailsViewController.swift in Sources */,
+				7FF4712B267A37E700E88B97 /* NewsTableViewCell.swift in Sources */,
 				7FF4710E267A24EB00E88B97 /* NetworkingManager.swift in Sources */,
 				7FF47123267A2DDB00E88B97 /* SymbolTableViewCell.swift in Sources */,
 				7FF4711D267A259B00E88B97 /* News.swift in Sources */,

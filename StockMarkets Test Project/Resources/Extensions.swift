@@ -5,7 +5,7 @@
 //  Created by Milos Petrusic on 16.6.21..
 //
 
-import Foundation
+import UIKit
 
 extension String {
     
@@ -23,5 +23,19 @@ extension String {
             return dateFormatter.string(from: date)
         }
         return nil
+    }
+}
+
+extension UIImageView {
+    func load(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
     }
 }

@@ -80,3 +80,80 @@ class SymbolParser: NSObject, XMLParserDelegate {
         }
     }
 }
+
+class NewsParser: NSObject, XMLParserDelegate {
+    private var news: [News] = []
+    private var newsDict: [String: String] = [:]
+    private var currentElement = ""
+    private var currentTitle: String = "" {
+        didSet {
+            currentTitle = currentTitle.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        }
+    }
+    private var currentImageId: String = "" {
+        didSet {
+            currentImageId = currentImageId.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        }
+    }
+    
+    func parseNews(url: String, completion: @escaping (Result<[News], NetworkingError>) -> Void) {
+        
+        var request = URLRequest(url: URL(string: url)!)
+        let username = "android_tt"
+        let password = "Sk3M!@p9e"
+        let loginString = "\(username):\(password)"
+
+        guard let loginData = loginString.data(using: String.Encoding.utf8) else {
+            return
+        }
+        let base64LoginString = loginData.base64EncodedString()
+
+        request.httpMethod = "GET"
+        request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
+        let urlSession = URLSession.shared
+        let task = urlSession.dataTask(with: request) { (data, response, error) in
+            guard let data = data else {
+                if error != nil {
+                    completion(.failure(NetworkingError.failedToFetch))
+                }
+                return
+            }
+            
+            // parse xml data
+            let parser = XMLParser(data: data)
+            parser.delegate = self
+            parser.parse()
+            completion(.success(self.news))
+        }
+        
+        task.resume()
+    }
+    
+    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
+        
+        currentElement = elementName
+        if currentElement == "NewsArticle" {
+            currentTitle = ""
+        }
+        if currentElement == "NewsArticle" {
+            currentImageId = ""
+        }
+    }
+    
+    func parser(_ parser: XMLParser, foundCharacters string: String)
+        {
+            switch currentElement {
+            case "Headline": currentTitle += string
+            case "ImageID" : currentImageId += string
+            default: break
+            }
+        }
+    
+    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+        if elementName == "NewsArticle" {
+            
+            let newsItem = News(headline: currentTitle, imageId: currentImageId)
+            news += [newsItem]
+        }
+    }
+}
