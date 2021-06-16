@@ -239,6 +239,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         return UITableViewCell()
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if let vc = storyboard?.instantiateViewController(identifier: "SymbolDetailsViewController") as? SymbolDetailsViewController {
+            vc.selectedSymbol = symbols[indexPath.row]
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
 
 enum SymbolSortState: String {
