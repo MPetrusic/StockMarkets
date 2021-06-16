@@ -24,6 +24,7 @@
 		7FF47127267A333200E88B97 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF47126267A333200E88B97 /* Extensions.swift */; };
 		7FF4712B267A37E700E88B97 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF47129267A37E700E88B97 /* NewsTableViewCell.swift */; };
 		7FF4712C267A37E700E88B97 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF4712A267A37E700E88B97 /* NewsTableViewCell.xib */; };
+		7FF4712F267A522D00E88B97 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF4712E267A522D00E88B97 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		7FF47126267A333200E88B97 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7FF47129267A37E700E88B97 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		7FF4712A267A37E700E88B97 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
+		7FF4712E267A522D00E88B97 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				7FF47110267A252200E88B97 /* SymbolDetailsViewController.swift */,
 				7FF47113267A253300E88B97 /* NewsViewController.swift */,
 				7FF47116267A254200E88B97 /* NewsDetailsViewController.swift */,
+				7FF4712E267A522D00E88B97 /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				7FF47114267A253300E88B97 /* NewsViewController.swift in Sources */,
 				7FF4711A267A257400E88B97 /* Symbol.swift in Sources */,
 				7FF470F5267A243E00E88B97 /* AppDelegate.swift in Sources */,
+				7FF4712F267A522D00E88B97 /* ProfileViewController.swift in Sources */,
 				7FF47127267A333200E88B97 /* Extensions.swift in Sources */,
 				7FF470F7267A243E00E88B97 /* SceneDelegate.swift in Sources */,
 			);
